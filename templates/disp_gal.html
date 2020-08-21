@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block body_block %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View and Delete from Gallery</title>
+</head>
+<body>
+{% for n in gal %}
+    <img src="{{ MEDIA_URL }}{{n.g1_img.url}}" alt="no preiver" width="50%" height="50%" alt="">
+    <form method="post">
+        {% csrf_token %}
+        <input type="hidden" value="{{ n.g1_id }}" name="img_id">
+        <input type="submit" value="delete">
+    </form>
+{% endfor %}
+
+</body>
+</html>
+{% endblock %}

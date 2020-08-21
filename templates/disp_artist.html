@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block body_block %}
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+    <h1>This is display artist page</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Contact</th>
+            <th>Email</th>
+            <th>Description</th>
+            <th>FB link</th>
+            <th>Insta link</th>
+            <th>Image</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        {% for a in artist %}
+            <tr>
+                <form method="post" action="{% url 'heritage:update_artist' %}" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <td><input type="text" value="{{ a.a_name }}" name="name"></td>
+                    <td><input type="text" value="{{ a.a_contact }}" name="contact"></td>
+                    <td><input type="email" value="{{ a.a_email }}" name="email"></td>
+                    <td><input type="text" value="{{ a.a_des }}" name="des"></td>
+                    <td><input type="text" value="{{ a.a_fb }}" name="fb"></td>
+                    <td><input type="text" value="{{ a.a_insta }}" name="insta"></td>
+                    <td><input type="file" name="imgf"></td>
+                    <td><input type="submit" value="edit"></td>
+                    <input type="hidden" value="{{ a.a_id }}" name="id">
+                </form>
+                <td>
+                    <form method="post">
+                        {% csrf_token %}
+                        <input type="hidden" value="{{ a.a_id }}" name="picid">
+                        <input type="submit" value="delete">
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    </body>
+    </html>
+{% endblock %}

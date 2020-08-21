@@ -1,0 +1,44 @@
+body{
+    background: url('grey.png');
+    font-size:20px;
+    font-family:'Agency FB';
+    color: 'black';
+}
+
+
+a{
+	text-decoration: blink;
+	color: #24d9e2;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 6;
+    overflow: hidden;
+    background-color: #317873;
+
+    top: 0;
+    font-family: "Agency FB";
+    font-size: 22px;
+    color: black;
+    height:50px;
+    width:100%;
+
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 30px;
+    text-decoration: none;
+    height: 55px;
+    font-size: 31px;
+
+}

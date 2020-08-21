@@ -1,0 +1,339 @@
+<!DOCTYPE HTML>
+<html>
+{% load static %}
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Title -->
+    <title>Tattoo Heritage</title>
+
+    <!-- Bootstrap & Font-Awesome CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href={% static "css/bootstrap.min.css" %} type='text/css'>
+    <link rel="stylesheet" href={% static "css/font-awesome.min.css" %} type='text/css'>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href={% static "css/style.css" %} type='text/css'>
+    <link rel="stylesheet" href={% static "css/prettyPhoto.css" %} type='text/css'>
+    <link rel="stylesheet" href={% static "css/responsive.css" %} type='text/css'>
+
+    <!-- Animation CSS -->
+    <link href={% static "css/animate.css" %} rel="stylesheet" type="text/css" media="all">
+
+    <!-- Google Webfont -->
+    <link href='http://fonts.googleapis.com/css?family=Noticia+Text:400,700' rel="stylesheet" type='text/css'>
+
+    <!-- js files & script -->
+    <script type="text/javascript" src={% static "js/jquery-1.11.1.min.js" %}></script>
+    <script type="text/javascript" src={% static "js/hover_pack.js" %}></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
+            });
+        });
+    </script>
+    <script type="text/javascript" src={% static "js/move-top.js" %}></script>
+    <script type="text/javascript" src={% static "js/easing.js" %}></script>
+    <script type="text/javascript" src={% static "js/modernizr.js" %}></script>
+    <script type="text/javascript" src={% static "js/retina.js" %}></script>
+    <script type="text/javascript" src={% static "js/jquery.prettyPhoto.js" %}></script>
+    <script type="text/javascript" src={% static "js/wow.min.js" %}></script>
+    <script>
+        new WOW().init();
+    </script>
+</head>
+<body>
+<header> <!-- Header Part -->
+    <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Tattoo Heritage</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#artist">Artists</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="" class="scroll"><h3>{% if success_msg %}
+                        {{ success_msg }}
+                    {% endif %}</h3></a></li>
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src={% static "images/tattoo heritage.jpg" %} alt="..." style="padding-top: 51px;">
+            </div>
+            <div class="item">
+                <img src={% static "images/slide6.JPG" %} alt="Can't_Display" style="padding-top: 51px;" height="60px">
+
+            </div>
+            <div class="item">
+                <img src={% static "images/Untitled-1 copy.jpg" %} alt="Can't_Display" style="padding-top: 51px;"
+                     height="60px">
+
+            </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+</header>
+<section id="about-section"> <!-- About Section -->
+    <div class="container-fluid">
+        <div class="row" id="about">
+            <div class="col-md-6 about_left">
+                <a href="#about" class="button-one about_btn button-type-one button-box">About Us</a>
+            </div>
+            <div class="col-md-6 about_right wow fadeInUp" data-wow-delay="0.2s">
+                <div class="about_text">
+                    <h3>Aliquam ac justo interdum, elementum ligula et, condimentum orci. Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit.</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc risus eros, ultricies quis erat sit
+                        amet, elementum vulputate lorem. Sed at lacinia lectus, quis blandit libero. </p>
+                    <p>Quisque ac malesuada lectus. Proin gravida feugiat commodo. Phasellus fermentum sem ut felis
+                        vehicula aliquet. Donec rhoncus, mi et euismod dictum, purus lorem vehicula justo, a iaculis mi
+                        nulla et risus.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="twitter-section"> <!-- Twitter Section -->
+    <div class="twitter-div wow bounceInUp" data-wow-delay="0.0s" id="gallery">
+        <div class="container">
+            <div class="row">
+                <div class="gallery-title">
+                    <a href="#gallery" class="button-one gallery_btn button-type-one button-box">Gallery</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="gallery-two-image-section"> <!-- Gallery Two Section -->
+    <div class="container-fluidgallery wow fadeInDown" data-wow-delay="0.0s">
+        <div class="row">
+            <div class="gallery-two-row-one">
+                <ul class="gallery-grid-one gallery-grid-box">
+                    {% for a in gal1_img %}
+                        <li>
+                            <div class="b-link-stripe b-animate-go thickbox"> <!-- Gallery image no : 1 -->
+
+                                <img src="{{ MEDIA_URL }}{{ a.g1_img.url }}" alt="" width="100%" height="350px"/>
+
+                                <div class="b-wrapper">
+                                    <div class="b-animate b-from-left b-delay03 ">
+                                        <a href="{{ MEDIA_URL }}{{ a.g1_img.url }}" rel="prettyPhoto[pp_gal]">
+                                            <button class="zooming md-trigger">
+                                                <img src={% static "images/zoom.png" %} alt=""/>
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="twitter-section"> <!-- Twitter Section -->
+    <div class="twitter-div wow bounceInUp" data-wow-delay="0.0s" id="artist">
+        <div class="container">
+            <div class="row">
+                <div class="gallery-title">
+                    <a href="#artist" class="button-one gallery_btn button-type-one button-box">Artist</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% for ass in art %}
+    <section id="artist-section"> <!-- Artist Section -->
+
+        <div class="container-fluid">
+            <div class="row" id="artist">
+                <div class="col-md-6 artist_left">
+                    <img src="{{ MEDIA_URL }}{{ ass.a_img.url }}" width=760px height=600px alt="Sorry!!!"/>
+                </div>
+                <div class="col-md-6 artist_right wow fadeInUp" data-wow-delay="0.0s">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <h2>{{ ass.a_name }}</h2>
+                    <br>
+                    <br>
+                    <br>
+                    <p>{{ ass.a_des }}</p>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="newsletter-div">
+                        <form action="{% url 'heritage:view_work' %}" method="post" class="newsletter">
+                            {% csrf_token %}
+                            <input type="hidden" value={{ ass.a_id }} name="ar_id"/>
+                            <input type="submit" value="View Works"/>
+                        </form>
+                        <ul class="contact-social">
+                            <li><a href="{{ ass.a_fb }}" target="_blank" rel="noreferrer"> <i
+                                    class="fb"> </i></a></li>
+                            <li><a href="{{ ass.a_insta }}" target="_blank" rel="noreferrer"><i
+                                    class="pinterest"> </i> </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endfor %}
+
+
+<section id="twitter-section"> <!-- Location -->
+    <div class="twitter-div wow bounceInUp" data-wow-delay="0.0s" id="location">
+        <div class="container">
+            <div class="row">
+                <div class="gallery-title">
+                    <a href="#location" class="button-one gallery_btn button-type-one button-box">Our Location</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="map-section"> <!-- Map Section -->
+    <div class="container-fluid">
+        <div class="row" id="map">
+            <div class="col-md-6 map_left">
+                <a href="https://www.google.com/maps/dir//Tattoo+Heritage+Thamel+Marg/@27.7134018,85.2761354,13z/data=!4m8!4m7!1m0!1m5!1m1!1s0x39eb195c923d52bd:0x567fd473e0015a00!2m2!1d85.311155!2d27.7134062"
+                   target="_blank" rel="noreferrer"><img src={% static "images/location.jpg" %} alt="" height="100%">
+                </a>
+            </div>
+
+
+            <div class="col-md-6 map_right wow fadeInUp" data-wow-delay="0.0s">
+                <class class="map_text">
+                    <a target="_blank"
+                       href="https://www.google.com/maps/@27.71338,85.31118,3a,75y,299.17h,107.17t/data=!3m8!1e1!3m6!1sAF1QipPsymP4xJQ9Bw2XEEVAyGdPUAa0WOretxvoH__f!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPsymP4xJQ9Bw2XEEVAyGdPUAa0WOretxvoH__f%3Dw203-h100-k-no-pi-0-ya94.511024-ro-0-fo100!7i8704!8i4352">
+                        <h2>Click here for 360° map view</h2></a>
+                </class>
+            </div>
+        </div>
+
+    </div>
+</section>
+<section id="youtube-video">
+    <iframe width="100%" height="780" src="https://www.youtube.com/embed/w_duWKl7VkM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section>
+
+<section id="contact-section"> <!-- Contact info Section-->
+    <div class="contact" data-wow-delay="0.0s" id="contact">
+        <div class="container">
+            <div class="col-md-7 contact-left wow fadeInLeft">
+                <a href="#" class="button-one contact_btn button-type-one button-box">Contact Us</a>
+                <h4>Tattoo Heritage is situated at Thamel, just opposite of the sandwich point thamel</h4>
+                <div class="contact-info">
+                    <ul class="contact-list-one">
+                        <li><h5>Info:</h5></li>
+                        <li>Phone : <span class="bold">9841124452</span></li>
+                        <li>Email : <a href="mailto:"> tattooheritage@gmail.com</a></li>
+                        <li>Address : <span class="bold">Thamel, Narsingh Chowk</span></li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <ul class="contact-social">
+                    <li><a href="https://www.facebook.com/tattooheritage " target="_blank" rel="noreferrer"> <i
+                            class="fb"> </i></a></li>
+                    <li><a href="https://www.youtube.com" target="_blank" rel="noreferrer"> <i class="yt"> </i></a></li>
+                    <li><a href="https://www.instagram.com/tattoo_heritage" target="_blank" rel="noreferrer"><i
+                            class="pinterest"> </i> </a></li>
+                </ul>
+            </div>
+            <div class="col-md-5 wow fadeInRight">
+                <div class="contact-form">
+                    <form method="post">
+                        {% csrf_token %}
+                        {% if invalid_msg %}
+                            <h5>{{ invalid_msg }}</h5>
+                        {% endif %}
+                        <input type="text" name='uname' placeholder="Name">
+                        <input type="text" name='uemail' placeholder="Email">
+                        <textarea name='umsg' placeholder="Message"></textarea>
+                        <label class="button-one"><input type="submit" value="Send"></label>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(function () {
+        $("a[rel^='prettyPhoto']").prettyPhoto();
+    });
+</script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        /*
+        var defaults = {
+              containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear'
+         };
+        */
+
+        $().UItoTop({easingType: 'easeOutQuart'});
+
+    });
+</script>
+
+<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+</body>
+</html>		

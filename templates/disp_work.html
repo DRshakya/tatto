@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block body_block %}
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Display_work</title>
+        {% for n in work %}
+            <h3>Artist: {{ n.a_id.a_name }}</h3>
+            <img src={{ MEDIA_URL }}{{ n.w_img.url }} alt="No_Preview" width="40%" height="40%">
+            <form method="post">
+                {% csrf_token %}
+                <input type="hidden" value="{{ n.w_id }}" name="im_id">
+                <input type="submit" value="Delete">
+            </form>
+        {% endfor %}
+    </head>
+    <body>
+
+    </body>
+    </html>
+{% endblock %}

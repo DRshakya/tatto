@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block body_block %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Gallery</title>
+</head>
+<body>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Add">
+
+</form>
+{% if sucess_msg %}
+    <h1>{{ sucess_msg }}</h1>
+{% else %}
+    <h1>{{ fail_msg }}</h1>
+{% endif %}
+
+</body>
+</html>
+{% endblock %}

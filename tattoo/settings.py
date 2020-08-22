@@ -29,7 +29,7 @@ SECRET_KEY = '72(n#21use+*cv2uevhl2n($(3gpdr340162hgr=k)o%4-_=bc'
 DEBUG = True
 
 #email
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'smtp.sendgrid.net.com'
 EMAIL_HOST_USER = 'collegeworks2019@gmail.com'
 EMAIL_HOST_PASSWORD = 'Dipankar123.@'
 EMAIL_PORT = 587

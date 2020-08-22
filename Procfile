@@ -1,1 +1,0 @@
-web: gunicorn tattoo.wsgi --log-file

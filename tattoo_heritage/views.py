@@ -24,6 +24,7 @@ def index(request):
         name = str(request.POST.get('uname'))
         semail = str(request.POST.get('uemail'))
         msg = request.POST.get('umsg')
+        ph = request.POST.get('uph')
         send_mail(semail, msg, settings.EMAIL_HOST_USER,
                   ['collegeworks2019@gmail.com'], fail_silently=False)
         context["success_msg"] = "Sucessfully send"
